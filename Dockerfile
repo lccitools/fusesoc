@@ -20,11 +20,13 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-FROM lccitools/base:latest
+FROM lccitools/base:2017.1-rc1
 LABEL Maintainer  Stefan Wallentowitz <stefan@wallentowitz.de>
 LABEL Description "FuseSoC"
 
-ARG VERSION=1.6
+ARG VERSION=1.6.1
+
+RUN apt-get update && apt-get install -y python3-venv
 
 WORKDIR /tmp
 RUN git clone https://github.com/olofk/fusesoc
